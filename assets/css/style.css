@@ -323,15 +323,6 @@ code, pre { font-family: var(--font-mono); }
   color: rgba(255, 255, 255, 0.95);
 }
 
-.hero-kicker {
-  margin-top: 1.75rem;
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.82);
-}
-
 .release-badge {
   display: flex;
   flex-direction: column;
