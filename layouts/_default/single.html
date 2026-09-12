@@ -1,0 +1,18 @@
+{{ define "main" }}
+<div class="page-head">
+  <div class="container container-narrow">
+    {{ if eq .Section "blog" }}
+    <a class="back-link" href="/blog/"><span aria-hidden="true">&larr;</span> All posts</a>
+    {{ end }}
+    <h1>{{ .Title }}</h1>
+    {{ with .Date }}<p class="page-meta"><time datetime="{{ .Format "2006-01-02" }}">{{ .Format "January 2, 2006" }}</time></p>{{ end }}
+    {{ with .Params.subtitle }}<p class="page-subtitle">{{ . }}</p>{{ end }}
+  </div>
+</div>
+
+<section class="section section-tight">
+  <div class="container container-narrow">
+    <article class="prose">{{ .Content }}</article>
+  </div>
+</section>
+{{ end }}

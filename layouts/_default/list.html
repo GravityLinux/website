@@ -1,0 +1,26 @@
+{{ define "main" }}
+<div class="page-head">
+  <div class="container container-narrow">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.subtitle }}<p class="page-subtitle">{{ . }}</p>{{ end }}
+  </div>
+</div>
+
+<section class="section section-tight">
+  <div class="container container-narrow">
+    <div class="prose">{{ .Content }}</div>
+
+    {{ with .Pages }}
+    <div class="post-list">
+      {{ range . }}
+      <a href="{{ .RelPermalink }}" class="post-item">
+        {{ with .Date }}<time datetime="{{ .Format "2006-01-02" }}">{{ .Format "January 2, 2006" }}</time>{{ end }}
+        <h3>{{ .Title }}</h3>
+        {{ with .Params.summary }}<p>{{ . }}</p>{{ end }}
+      </a>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

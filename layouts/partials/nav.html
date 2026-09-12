@@ -1,0 +1,26 @@
+<header class="site-header">
+  <nav class="nav-container" aria-label="Main">
+    <a href="/" class="nav-logo">
+      <img src="/images/gravity-logo.svg" alt="" width="34" height="36">
+      <span>gravity</span>
+    </a>
+
+    <input type="checkbox" id="nav-check" class="nav-check">
+    <label for="nav-check" class="nav-toggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </label>
+
+    <ul class="nav-links">
+      {{ range .Site.Menus.main }}
+      <li>
+        <a href="{{ .URL }}"
+           {{ if .Params.external }}target="_blank" rel="noopener noreferrer"{{ end }}
+           {{ if and (ne .URL "/") ($.IsMenuCurrent "main" .) }}class="active"{{ end }}>{{ .Name }}{{ if .Params.external }}{{ partial "external-icon.html" . }}{{ end }}</a>
+      </li>
+      {{ end }}
+      <li class="nav-toggle-item">
+        {{ partial "theme-toggle.html" . }}
+      </li>
+    </ul>
+  </nav>
+</header>

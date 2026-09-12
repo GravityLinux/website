@@ -1,0 +1,31 @@
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <a href="/" class="footer-logo">
+        <img src="/images/gravity-logo.svg" alt="" width="30" height="32">
+        <span>gravity</span>
+      </a>
+      <p class="footer-desc">{{ .Site.Params.description }}</p>
+    </div>
+
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h4>Project</h4>
+        <ul>
+          {{ range .Site.Menus.main }}<li><a href="{{ .URL }}">{{ .Name }}</a></li>{{ end }}
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Community</h4>
+        <ul>
+          <li><a href="{{ .Site.Params.discord }}" target="_blank" rel="noopener noreferrer">Discord</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; The Gravity Linux Contributors.</p>
+    <p class="footer-note">Gravity Linux is not affiliated with or endorsed by Apple Inc.</p>
+  </div>
+</footer>

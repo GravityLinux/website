@@ -1,0 +1,141 @@
+{{ define "main" }}
+
+<div class="hero-wrap">
+  <section class="hero">
+    <div class="hero-channels">
+      <span class="channels-label">Channels:</span>
+      <a href="{{ .Site.Params.discord }}" target="_blank" rel="noopener noreferrer" aria-label="Gravity Linux on Discord">
+        {{ partial "discord-icon.html" . }}
+      </a>
+    </div>
+
+    <div class="hero-body">
+      <h1 class="hero-title">It&rsquo;s Your Mac</h1>
+      <p class="hero-sub">
+        Gravity Linux is a Fedora remix that brings a fast, modern Linux desktop
+        to Apple Silicon &mdash; built in the open, by people like you.
+      </p>
+      <p class="hero-kicker">100% Free &amp; Open Source</p>
+
+      <a class="release-badge" href="/blog/">
+        {{ with .Site.Params.releaseLabel }}<span class="release-label">{{ . }}</span>{{ end }}
+        <span class="release-name">{{ .Site.Params.releaseName }}</span>
+        {{ with .Site.Params.releaseTarget }}<span class="release-target">{{ . }}</span>{{ end }}
+      </a>
+    </div>
+
+    <div class="hero-foot">
+      <div class="hero-foot-left">
+        <span class="hero-foot-label">Latest:</span>
+        <a href="/blog/hello-gravity/">Hello, World! Introducing Gravity Linux <span aria-hidden="true">&rarr;</span></a>
+      </div>
+      <div class="hero-foot-right">
+        <p>Built entirely by clean-room reverse engineering.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+{{/* TEMPORARILY DISABLED until the first release ships.
+     Remove this wrapper to bring the install section back. */}}
+{{/*
+<!-- Install ------------------------------------------------------------- -->
+<section class="section" id="install">
+  <div class="container">
+    <div class="section-head">
+      <h2>Install Gravity Linux</h2>
+      <p class="section-lede">
+        One command from macOS. The installer resizes your disk, fetches the
+        release, and walks you through the rest.
+      </p>
+    </div>
+
+    <div class="install-card">
+      <div class="install-card-head">
+        <span class="pill pill-alpha">Early alpha</span>
+        <span class="install-card-target">M4 Mac mini &middot; macOS 27.0 or later</span>
+      </div>
+      <pre class="install-cmd"><code>curl https://gravitylinux.org/install | sh</code></pre>
+      <p class="install-note">
+        <strong>This release is intended for developers.</strong> It is not ready
+        to be a daily driver &mdash; there may be no upgrade path to beta, power
+        management is incomplete, and suspend does not work yet.
+      </p>
+      <div class="install-actions">
+        <a class="btn btn-primary" href="/docs/">Read the docs</a>
+        <a class="btn btn-ghost" href="{{ .Site.Params.discord }}" target="_blank" rel="noopener noreferrer">Get help on Discord</a>
+      </div>
+    </div>
+  </div>
+</section>
+*/}}
+
+<!-- What you get --------------------------------------------------------- -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <h2>What you get</h2>
+    </div>
+    <div class="card-grid">
+      <article class="card">
+        <h3>A real desktop</h3>
+        <p>KDE Plasma on Wayland, on top of a Fedora base you already know &mdash;
+           <code>dnf</code>, SELinux, Flatpak, and the whole Fedora package set.</p>
+      </article>
+      <article class="card">
+        <h3>Native GPU acceleration</h3>
+        <p>A working display controller and GPU driver, so the desktop, your
+           browser, and your games run on the hardware &mdash; not on llvmpipe.</p>
+      </article>
+      <article class="card">
+        <h3>Upstream first</h3>
+        <p>Our long-term goal is to land everything upstream. That is the only
+           practical way to keep a project like this sustainable.</p>
+      </article>
+      <article class="card">
+        <h3>Documented by design</h3>
+        <p>We publish our methods and findings as we go, so the next person does
+           not have to rediscover the same hardware from scratch.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Latest posts --------------------------------------------------------- -->
+{{ with (where .Site.RegularPages "Section" "blog") }}
+<section class="section">
+  <div class="container">
+    <div class="section-head section-head-row">
+      <h2>From the blog</h2>
+      <a class="section-more" href="/blog/">All posts <span aria-hidden="true">&rarr;</span></a>
+    </div>
+    <div class="post-list">
+      {{ range first 3 . }}
+      <a href="{{ .RelPermalink }}" class="post-item">
+        {{ with .Date }}<time datetime="{{ .Format "2006-01-02" }}">{{ .Format "January 2, 2006" }}</time>{{ end }}
+        <h3>{{ .Title }}</h3>
+        {{ with .Params.summary }}<p>{{ . }}</p>{{ end }}
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<!-- Community CTA -------------------------------------------------------- -->
+<section class="section cta">
+  <div class="container container-narrow cta-inner">
+    <h2>Built by people just like you</h2>
+    <p>
+      Gravity Linux is built by people who are passionate about open source and
+      good engineering. Whether you write drivers, file bug reports, or just run
+      it on your hardware and tell us what broke &mdash; there is room for you.
+    </p>
+    <div class="cta-actions">
+      <a class="btn btn-primary" href="{{ .Site.Params.discord }}" target="_blank" rel="noopener noreferrer">Join the Discord</a>
+      <a class="btn btn-ghost" href="/contributors/">Read the contributor guide</a>
+    </div>
+  </div>
+</section>
+
+{{ end }}

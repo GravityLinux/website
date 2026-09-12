@@ -1,0 +1,26 @@
+<dialog class="wip-dialog" id="wip-notice" aria-labelledby="wip-notice-title">
+  <h2 class="wip-dialog-title" id="wip-notice-title">This site is a work in progress</h2>
+  <p>
+    Gravity Linux hasn&rsquo;t had its first release yet, and this site is an
+    early draft. Copy, documentation, and support information are incomplete or
+    still placeholder &mdash; please don&rsquo;t treat anything here as final.
+  </p>
+  <form method="dialog">
+    <button class="btn btn-primary" value="ok" autofocus>Got it</button>
+  </form>
+</dialog>
+
+<script>
+  (function () {
+    var KEY = 'gravity:wip-notice:v1';
+    var d = document.getElementById('wip-notice');
+    if (!d || typeof d.showModal !== 'function') return;
+    try {
+      if (localStorage.getItem(KEY)) return;
+    } catch (e) { /* storage blocked: show it, just don't remember */ }
+    d.showModal();
+    d.addEventListener('close', function () {
+      try { localStorage.setItem(KEY, '1'); } catch (e) {}
+    });
+  })();
+</script>
