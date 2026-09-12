@@ -110,6 +110,17 @@ provenance, disclosure, and copyright requirements.
 
 Neither type of documentation is allowed to contain tainted information.
 
+### 6.1 Communication Restrictions
+
+Unless explicitly requested, any Discord messages, interpersonal communication,
+or other chat like formats may not contain large blocks of LLM generated
+content.
+
+Github issues, bug reports, or other technical communications, must follow the
+above requirements for documentation "For Humans".
+
+LLMs are not tools for communicating with humans.
+
 ## 7. Records and Process Verification
 
 Gravity Linux maintainers may request information necessary to verify
