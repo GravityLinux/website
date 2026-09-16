@@ -1,0 +1,25 @@
+{{ define "main" }}
+<div class="container docs-layout">
+  {{ partial "docs-sidebar.html" . }}
+
+  <div class="docs-content">
+    <header class="docs-head">
+      <h1>{{ .Title }}</h1>
+      {{ with .Params.subtitle }}<p class="page-subtitle">{{ . }}</p>{{ end }}
+    </header>
+    <article class="prose">{{ .Content }}</article>
+
+    {{/* Sub-sections list their own pages; the docs landing leaves that to the sidebar. */}}
+    {{ if and (ne .RelPermalink "/docs/") .Pages }}
+    <ul class="docs-child-list">
+      {{ range .Pages.ByWeight }}
+      <li>
+        <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+        {{ with .Params.subtitle }}<span>{{ . }}</span>{{ end }}
+      </li>
+      {{ end }}
+    </ul>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

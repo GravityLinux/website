@@ -1,0 +1,13 @@
+{{ define "main" }}
+<div class="container docs-layout">
+  {{ partial "docs-sidebar.html" . }}
+
+  <div class="docs-content">
+    <header class="docs-head">
+      <h1>{{ .Title }}</h1>
+      {{ with .Params.subtitle }}<p class="page-subtitle">{{ . }}</p>{{ end }}
+    </header>
+    <article class="prose">{{ .Content }}</article>
+  </div>
+</div>
+{{ end }}

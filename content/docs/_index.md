@@ -1,5 +1,6 @@
 ---
 title: "Documentation"
+linkTitle: "Feature Support"
 subtitle: "Placeholder — this will become the feature support matrix and install guides."
 ---
 

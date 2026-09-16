@@ -1,0 +1,9 @@
+{{- $page := .page -}}
+{{- $current := .current -}}
+{{- $isCurrent := eq $current.RelPermalink $page.RelPermalink -}}
+<a class="docs-nav-link{{ if $isCurrent }} is-current{{ end }}"
+   href="{{ $page.RelPermalink }}"
+   {{- if $isCurrent }} aria-current="page"{{ end }}>
+  <span>{{ $page.LinkTitle }}</span>
+  {{- if $page.Params.wip }}<span class="docs-nav-badge">WIP</span>{{ end -}}
+</a>

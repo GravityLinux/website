@@ -1,0 +1,31 @@
+{{- $current := . -}}
+{{- $docs := site.GetPage "/docs" -}}
+<aside class="docs-sidebar">
+  <nav class="docs-nav" aria-label="Documentation">
+    <ul class="docs-nav-list">
+      <li>{{ partial "docs-nav-link.html" (dict "page" $docs "current" $current) }}</li>
+
+      {{- range $docs.Pages.ByWeight }}
+      {{- if .IsSection }}
+      <li>
+        <details class="docs-nav-group"{{ if or (eq $current.RelPermalink .RelPermalink) ($current.IsDescendant .) }} open{{ end }}>
+          <summary class="docs-nav-summary">
+            {{ partial "docs-nav-link.html" (dict "page" . "current" $current) }}
+            <span class="docs-nav-chevron" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </span>
+          </summary>
+          <ul class="docs-nav-sublist">
+            {{- range .Pages.ByWeight }}
+            <li>{{ partial "docs-nav-link.html" (dict "page" . "current" $current) }}</li>
+            {{- end }}
+          </ul>
+        </details>
+      </li>
+      {{- else }}
+      <li>{{ partial "docs-nav-link.html" (dict "page" . "current" $current) }}</li>
+      {{- end }}
+      {{- end }}
+    </ul>
+  </nav>
+</aside>
