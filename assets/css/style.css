@@ -697,42 +697,6 @@ code, pre { font-family: var(--font-mono); }
 }
 
 /* ============================================================
-   Work-in-progress notice
-   ============================================================ */
-.wip-dialog {
-  /* margin:auto restores the centering the global reset strips */
-  margin: auto;
-  max-width: 30rem;
-  padding: 1.75rem;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: var(--card-bg);
-  color: var(--text);
-  box-shadow: var(--shadow);
-}
-
-.wip-dialog::backdrop {
-  background: rgba(12, 5, 7, 0.62);
-  backdrop-filter: blur(2px);
-}
-
-.wip-dialog-title {
-  font-size: 1.3rem;
-  margin-bottom: 0.75rem;
-}
-
-.wip-dialog p {
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  margin-bottom: 1.5rem;
-}
-
-.wip-dialog form {
-  display: flex;
-  justify-content: flex-end;
-}
-
-/* ============================================================
    Footer
    ============================================================ */
 .site-footer {

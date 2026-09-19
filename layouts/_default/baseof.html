@@ -25,7 +25,6 @@
     {{ block "main" . }}{{ end }}
   </main>
   {{ partial "footer.html" . }}
-  {{ if .Site.Params.wipNotice }}{{ partial "wip-notice.html" . }}{{ end }}
   <script>
     (function () {
       var btn = document.getElementById('theme-toggle');
