@@ -170,7 +170,7 @@ macOS and then install Gravity Bootloader as the boot object in this install.
         -v /Volumes/YOUR VOLUME HERE \
         -c /Volumes/PATH TO YOUR m1n1.bin OBJECT HERE \
         --raw \
-        --entrypoint 2048 \
+        --entry-point 2048 \
         --lowest-virtual-address 0
    ```
 
@@ -178,7 +178,8 @@ macOS and then install Gravity Bootloader as the boot object in this install.
    reboot. You should boot into Gravity Bootloader.
 
 Third, pop a shell and verify that the proxy works. From the master, first
-enumerate all devices and find the one corresponding to your device (MacBook Neo people have a different workflow):
+enumerate all devices and find the one corresponding to your device (MacBook
+Neo people have a different workflow):
 
 ```
 ls /dev
@@ -187,7 +188,8 @@ ls /dev
 On macOS, you should see something like /dev/cu.usbmodem followed by a serial
 number. I'm not sure what this looks like from a regular Linux machine.
 
-From there you can run (after installing all required python packages):
+From there you can run (after installing `serial` and `construct` python
+packages):
 
 ```
 M1N1DEVICE=/dev/cu.usbmodemSERIALNUMBER python3 proxyclient/tools/shell.py
