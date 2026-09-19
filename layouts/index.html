@@ -26,7 +26,7 @@
     <div class="hero-foot">
       <div class="hero-foot-left">
         <span class="hero-foot-label">Latest:</span>
-        <a href="/blog/hello-gravity/">Hello, World! Introducing Gravity Linux <span aria-hidden="true">&rarr;</span></a>
+        <a href="/blog/early-alpha-m4-mac-mini/">Gravity Linux Early Alpha for the M4 Mac mini <span aria-hidden="true">&rarr;</span></a>
       </div>
       <div class="hero-foot-right">
         <p>Built entirely by clean-room reverse engineering.</p>
@@ -35,9 +35,6 @@
   </section>
 </div>
 
-{{/* TEMPORARILY DISABLED until the first release ships.
-     Remove this wrapper to bring the install section back. */}}
-{{/*
 <!-- Install ------------------------------------------------------------- -->
 <section class="section" id="install">
   <div class="container">
@@ -52,9 +49,9 @@
     <div class="install-card">
       <div class="install-card-head">
         <span class="pill pill-alpha">Early alpha</span>
-        <span class="install-card-target">M4 Mac mini &middot; macOS 27.0 or later</span>
+        <span class="install-card-target">M4 Mac mini</span>
       </div>
-      <pre class="install-cmd"><code>curl https://gravitylinux.org/install | sh</code></pre>
+      <pre class="install-cmd"><code>curl -fsSL https://install.gravitylinux.org | sh</code></pre>
       <p class="install-note">
         <strong>This release is intended for developers.</strong> It is not ready
         to be a daily driver &mdash; there may be no upgrade path to beta, power
@@ -67,7 +64,6 @@
     </div>
   </div>
 </section>
-*/}}
 
 <!-- Device support ---------------------------------------------------- -->
 {{ partial "device-support.html" . }}

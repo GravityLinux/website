@@ -8,16 +8,14 @@ title = "Gravity Linux"
   discord = "https://discord.gg/sEEz2wN4v"
   # Shown in the hero release badge
   releaseLabel = "Latest Release"
-  releaseName = "Coming Soon"
+  releaseName = "44"
   releaseTarget = ""
 
 [menus]
-  # TEMPORARILY DISABLED alongside the install section in layouts/index.html.
-  # Uncomment to bring it back.
-  # [[menus.main]]
-  #   name = "Install Gravity"
-  #   url = "/#install"
-  #   weight = 1
+  [[menus.main]]
+    name = "Install Gravity"
+    url = "/#install"
+    weight = 1
   [[menus.main]]
     name = "About"
     url = "/about/"

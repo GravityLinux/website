@@ -351,7 +351,7 @@ code, pre { font-family: var(--font-mono); }
 
 .release-name {
   font-family: var(--font-display);
-  font-size: 2.1rem;
+  font-size: 4.5rem;
   font-weight: 900;
   letter-spacing: -0.02em;
   line-height: 1.05;
@@ -808,7 +808,7 @@ code, pre { font-family: var(--font-mono); }
   .hero { padding: 1.25rem 1.25rem 6rem; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 9vw), 0 100%); }
   .hero-body { margin-top: 2.5rem; }
   .release-badge { width: 180px; height: 180px; }
-  .release-name { font-size: 2.25rem; }
+  .release-name { font-size: 3.5rem; }
 
   .hero-foot { flex-direction: column; align-items: flex-start; gap: 1.5rem; margin-top: 3rem; }
   .hero-foot-right p { text-align: left; }
