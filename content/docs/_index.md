@@ -15,15 +15,8 @@ current as machines move between stages.
 
 ## What's here
 
-- **[Platform Documentation](/docs/platform-documentation/)** — the
-  reverse-engineered hardware documentation our drivers are written against.
+- **[Platform Documentation](/docs/platform-documentation/)** — information
+  about the Open OS Ecosystem on Apple Silicon.
 - **[For Developers](/docs/developers/)** — guides for people working on
   Gravity Linux itself, starting with
   [Tethered Boot](/docs/developers/tethered-boot/).
-
-## Still to come
-
-- Installation guide
-- Known issues and workarounds
-- Building Gravity Linux from source
-- Reporting bugs
