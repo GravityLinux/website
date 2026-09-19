@@ -1,0 +1,41 @@
+{{- $ds := site.Data.device_support -}}
+{{- $tiers := $ds.tiers -}}
+<section class="section device-support" id="device-support">
+  <div class="container">
+    <div class="section-head">
+      <h2>Device support</h2>
+      <p class="section-lede">
+        Find your Mac below. Support is tracked per machine and chip.
+      </p>
+    </div>
+
+    <div class="ds-grid">
+      {{- range $ds.devices }}
+      <article class="ds-device">
+        <span class="ds-device-icon">{{ partial "device-icon.html" .icon }}</span>
+        <h3 class="ds-device-name">{{ .name }}</h3>
+        {{- with .detail }}<p class="ds-device-detail">{{ . }}</p>{{ end }}
+        <ul class="ds-variants">
+          {{- range .variants }}
+          {{- $t := index $tiers .tier }}
+          <li class="ds-variant" data-tier="{{ .tier }}">
+            <span class="ds-variant-chip">{{ .name }}</span>
+            <span class="ds-variant-tier">{{ $t.label }}</span>
+          </li>
+          {{- end }}
+        </ul>
+      </article>
+      {{- end }}
+    </div>
+
+    <ul class="ds-legend">
+      {{- range $key := slice "wip" "alpha" "beta" "stable" }}
+      {{- $t := index $tiers $key }}
+      <li class="ds-legend-item">
+        <span class="ds-legend-key" data-tier="{{ $key }}">{{ $t.label }}</span>
+        <span class="ds-legend-note">{{ $t.note }}</span>
+      </li>
+      {{- end }}
+    </ul>
+  </div>
+</section>

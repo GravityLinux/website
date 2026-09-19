@@ -978,3 +978,118 @@ code, pre { font-family: var(--font-mono); }
     border-bottom: 1px solid var(--border);
   }
 }
+
+/* ============================================================
+   Device support (front page)
+   ============================================================ */
+[data-theme="light"] {
+  --ds-stable-bg: #DEF2CE; --ds-stable-fg: #2F5202;
+  --ds-beta-bg:   #FCEAC4; --ds-beta-fg:   #6E4700;
+  --ds-alpha-bg:  #FBD8DD; --ds-alpha-fg:  #8C0C20;
+  --ds-wip-bg:    #EFE9E8; --ds-wip-fg:    #6B5B59;
+}
+
+[data-theme="dark"] {
+  --ds-stable-bg: rgba(140, 196, 42, 0.16);  --ds-stable-fg: #A5D95A;
+  --ds-beta-bg:   rgba(253, 165, 12, 0.16);  --ds-beta-fg:   #F5B546;
+  --ds-alpha-bg:  rgba(249, 69, 84, 0.18);   --ds-alpha-fg:  #FC9AA3;
+  --ds-wip-bg:    rgba(255, 255, 255, 0.06); --ds-wip-fg:    #9C8A8D;
+}
+
+.ds-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+  gap: 1rem;
+}
+
+.ds-device {
+  padding: 1.35rem 1.4rem 1.5rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.ds-device-icon { display: block; width: 62px; color: var(--text-secondary); }
+.ds-device-icon svg { display: block; width: 100%; height: auto; }
+
+.ds-device-name { margin: 0.9rem 0 0; font-size: 1.05rem; }
+
+.ds-device-detail {
+  margin: 0.2rem 0 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.ds-variants {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin: 1.1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* One row per chip variant: chip name on the left, status on the right. The
+   whole row is tinted, so the colour reads before the text does. */
+.ds-variant {
+  --ds-bg: var(--ds-wip-bg);
+  --ds-fg: var(--ds-wip-fg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.4rem 0.65rem;
+  border-radius: 6px;
+  background: var(--ds-bg);
+  color: var(--ds-fg);
+}
+
+.ds-variant[data-tier="alpha"]  { --ds-bg: var(--ds-alpha-bg);  --ds-fg: var(--ds-alpha-fg); }
+.ds-variant[data-tier="beta"]   { --ds-bg: var(--ds-beta-bg);   --ds-fg: var(--ds-beta-fg); }
+.ds-variant[data-tier="stable"] { --ds-bg: var(--ds-stable-bg); --ds-fg: var(--ds-stable-fg); }
+
+.ds-variant-chip {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.ds-variant-tier {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.ds-legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+  gap: 0.6rem 1rem;
+  margin: 1.75rem 0 0;
+  padding: 1.35rem 0 0;
+  border-top: 1px solid var(--border);
+  list-style: none;
+}
+
+.ds-legend-item { display: flex; align-items: baseline; gap: 0.6rem; }
+
+.ds-legend-key {
+  flex: none;
+  min-width: 4.6em;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+  background: var(--ds-wip-bg);
+  color: var(--ds-wip-fg);
+}
+
+.ds-legend-key[data-tier="alpha"]  { background: var(--ds-alpha-bg);  color: var(--ds-alpha-fg); }
+.ds-legend-key[data-tier="beta"]   { background: var(--ds-beta-bg);   color: var(--ds-beta-fg); }
+.ds-legend-key[data-tier="stable"] { background: var(--ds-stable-bg); color: var(--ds-stable-fg); }
+
+.ds-legend-note { font-size: 0.85rem; line-height: 1.45; color: var(--text-secondary); }

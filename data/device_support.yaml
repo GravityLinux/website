@@ -1,0 +1,49 @@
+# Front-page device support widget (/#device-support).
+#
+# We do not track individual features: in practice a machine either works or
+# it does not, so support is recorded per machine and chip variant.
+#
+# tier: one of  wip | alpha | beta | stable   (see `tiers` below)
+
+tiers:
+  wip:
+    label: "WIP"
+    note: "Bring-up in progress. Not usable yet."
+  alpha:
+    label: "Alpha"
+    note: "Boots and runs. For developers and testers."
+  beta:
+    label: "Beta"
+    note: "Usable day to day, with known rough edges."
+  stable:
+    label: "Stable"
+    note: "Supported for general use."
+
+devices:
+  - name: "Mac mini"
+    detail: "2024"
+    icon: mini
+    variants:
+      - { name: "M4", tier: alpha }
+      - { name: "M4 Pro", tier: wip }
+
+  - name: "MacBook Air"
+    detail: "13-inch and 15-inch, 2025"
+    icon: laptop
+    variants:
+      - { name: "M4", tier: wip }
+
+  - name: "MacBook Pro"
+    detail: "14-inch, 2024"
+    icon: laptop
+    variants:
+      - { name: "M4", tier: wip }
+      - { name: "M4 Pro", tier: wip }
+      - { name: "M4 Max", tier: wip }
+
+  - name: "MacBook Pro"
+    detail: "16-inch, 2024"
+    icon: laptop
+    variants:
+      - { name: "M4 Pro", tier: wip }
+      - { name: "M4 Max", tier: wip }
