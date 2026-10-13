@@ -41,6 +41,9 @@ Use of an LLM does not excuse:
 An LLM is a tool used under your direction. You remain responsible for its
 inputs, outputs, behavior, and resulting contributions.
 
+An LLM cannot sign the Developer Certificate of Origin. Thus, you must add your
+Signed-Off-By manually after reviewing the code.
+
 ## 3. LLMs as Extensions of Contributors
 
 Your LLM is an extension of you. If in any session your LLM has looked at any
@@ -89,6 +92,12 @@ Disclosure must be sufficient to allow maintainers to understand:
 
 Disclosure is required even when the contributor believes the LLM's involvement
 was minor.
+
+For all code written with the help of an LLM, the commit message must contain:
+
+```
+Assisted-By: LLM
+```
 
 Failure to disclose LLM use may be treated as a serious violation of this
 policy.
