@@ -76,5 +76,5 @@ everything you break.
 ## Join Us
 
 If you want to be a part of our journey, please talk to us on
-[Discord](https://discord.gg/sEEz2wN4v), and have a read through our
+[Discord](https://discord.gg/jcmqxjZzyR), and have a read through our
 [contributor guide](/contributors/).

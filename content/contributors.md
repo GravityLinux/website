@@ -37,7 +37,7 @@ Before any technical contributions, please read our policies:
 - [Reverse Engineering Policy](/policies/reverse-engineering/)
 - [LLM Use and Clean-Room Policy](/policies/llm/)
 
-Additionally, please talk to us on [Discord](https://discord.gg/sEEz2wN4v)
+Additionally, please talk to us on [Discord](https://discord.gg/jcmqxjZzyR)
 first. We're always happy to discuss the project and ways you can contribute,
 and want to ensure your work helps solve the highest impact problems our
 project faces and doesn't duplicate work other people are doing.

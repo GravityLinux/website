@@ -5,7 +5,7 @@ title = "Gravity Linux"
 [params]
   description = "Gravity Linux is a Fedora remix bringing a fast, modern Linux desktop to Apple Silicon Macs."
   tagline = "Linux for modern Apple Silicon Macs"
-  discord = "https://discord.gg/sEEz2wN4v"
+  discord = "https://discord.gg/jcmqxjZzyR"
   # Shown in the hero release badge
   releaseLabel = "Latest Release"
   releaseName = "44"

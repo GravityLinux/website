@@ -76,4 +76,4 @@ subjects of Apple's ire by treating their copyright with a wide bearth and
 adopting well understood, defensible, and transparent reverse engineering
 processes and procedures.
 
-[Join the Discord &rarr;](https://discord.gg/sEEz2wN4v)
+[Join the Discord &rarr;](https://discord.gg/jcmqxjZzyR)
